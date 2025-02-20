@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Ponto</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f7;
+    }
+    .register-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .register-container h1 {
+      margin-bottom: 1.5rem;
+    }
+    .register-container button {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .ponto-container {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .ponto-container button {
+      margin: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h1>Registro</h1>
+    <form id="register-form">
+      <div class="form-group">
+        <input type="text" id="nomeCompleto" class="form-control" placeholder="Nome Completo" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" class="form-control" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" class="form-control" placeholder="Senha" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+    <a href="index.html" class="btn btn-link">Já tem uma conta? Faça login</a>
+  </div>
+
+  <div class="ponto-container">
+    <h2>Registrar Ponto</h2>
+    <button id="registrarChegada" class="btn btn-secondary">Registrar Hora de Chegada</button>
+    <button id="registrarSaidaAlmoco" class="btn btn-secondary">Registrar Saída para Almoço</button>
+    <button id="registrarVoltaAlmoco" class="btn btn-secondary">Registrar Volta do Almoço</button>
+    <button id="registrarSaidaExpediente" class="btn btn-secondary">Registrar Saída do Expediente</button>
+  </div>
+
+  <!-- Carregar bibliotecas e scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+  <script src="register.js"></script> <!-- Certifique-se de que este caminho está correto -->
+</body>
+</html>

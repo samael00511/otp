@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Ponto</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Ponto</h1>
+    <form id="pontoForm">
+      <div class="form-group">
+        <label for="nome">Nome do Funcionário:</label>
+        <input type="text" id="nome" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="email">Email do Funcionário:</label>
+        <input type="text" id="email" class="form-control" readonly>
+      </div>
+      <div class="form-group">
+        <label for="data">Data:</label>
+        <input type="date" id="data" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="horaEntrada">Hora de Entrada:</label>
+        <input type="time" id="horaEntrada" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="horaSaidaAlmoco">Hora de Saída para o Almoço:</label>
+        <input type="time" id="horaSaidaAlmoco" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="horaChegadaAlmoco">Hora de Chegada do Almoço:</label>
+        <input type="time" id="horaChegadaAlmoco" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="horaFimExpediente">Hora de Fim do Expediente:</label>
+        <input type="time" id="horaFimExpediente" class="form-control">
+      </div>
+      <button id="registro-ponto" type="button" class="btn btn-primary">Registrar Ponto</button>
+    </form>
+    <div id="resultado" class="mt-3"></div>
+    <button id="download" style="display: none;">Baixar Planilha</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

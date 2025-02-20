@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de OTP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f7;
+        }
+        .otp-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .otp-container h1 {
+            margin-bottom: 1.5rem;
+        }
+        .otp-container button {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="otp-container">
+        <h1>Verificação de OTP</h1>
+        <form id="otp-form">
+            <div class="form-group">
+                <input type="text" id="otp" class="form-control" placeholder="Digite o código OTP" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Verificar OTP</button>
+        </form>
+    </div>
+
+    <script>
+        // Event Listener para o formulário de verificação de OTP
+        document.getElementById('otp-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userOtp = document.getElementById('otp').value;
+            const sentOtp = localStorage.getItem('otp'); // Obtém o OTP enviado do armazenamento local
+
+            if (userOtp === sentOtp) {
+                console.log("OTP válido! Acesso concedido.");
+                window.location.href = "marcacao.html"; // Redirecionar para a próxima página
+            } else {
+                console.error("Código OTP inválido.");
+                alert("Código OTP inválido. Tente novamente.");
+            }
+        });
+    </script>
+</body>
+</html>
