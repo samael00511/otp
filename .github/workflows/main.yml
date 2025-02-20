@@ -1,0 +1,29 @@
+name: Build OTP Executable
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Executable
+        run: |
+          npm install -g pkg
+          pkg . --targets win
+
+      - name: Upload Executable
+        uses: actions/upload-artifact@v2
+        with:
+          name: otp-executable
+          path: meu-projeto.exe
